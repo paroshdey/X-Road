@@ -1,6 +1,7 @@
 FROM ubuntu:bionic
 ENV DEBIAN_FRONTEND=noninteractive
-
+RUN curl https://raw.githubusercontent.com/dvershinin/apt-get-centos/master/apt-get.sh -o /usr/local/bin/apt-get
+RUN chmod 0755 /usr/local/bin/apt-get
 RUN apt-get -qq update \
   && apt-get -qq upgrade \
   && apt-get -qq install sudo ca-certificates gnupg supervisor net-tools locales setpriv openjdk-8-jre-headless rlwrap ca-certificates-java crudini adduser expect nginx-light curl rsyslog authbind wget devscripts \
