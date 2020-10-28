@@ -1,5 +1,6 @@
 FROM ubuntu:bionic
 ENV DEBIAN_FRONTEND=noninteractive
+RUN yum install curl
 RUN curl https://raw.githubusercontent.com/dvershinin/apt-get-centos/master/apt-get.sh -o /usr/local/bin/apt-get
 RUN chmod 0755 /usr/local/bin/apt-get
 RUN apt-get -qq update \
